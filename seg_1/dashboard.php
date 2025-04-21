@@ -1,0 +1,26 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$username = $_SESSION['username'];
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static\css.css">
+
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <p>Bem-vindo, <?php echo $username; ?>!</p>
+    <p><a href="logout.php">Sair</a></p>
+</body>
+</html>
